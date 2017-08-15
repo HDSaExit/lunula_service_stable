@@ -15,4 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('locations', 'LocationController');
+Route::get("/login", function() {
+    return view('login/index');
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('jmlocator', 'MJLocatorController');

@@ -5,8 +5,13 @@ namespace App\Http\Controllers;
 use App\Location_model;
 use Illuminate\Http\Request;
 
-class LocationController extends Controller
+class JMLocatorRestController extends Controller
 {
+    public function __construct()
+    {
+        //$this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,7 @@ class LocationController extends Controller
      */
     public function index()
     {
-        return Location_model::all();
+        return response()->json(Location_model::all());
     }
 
     /**
